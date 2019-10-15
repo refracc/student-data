@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Student_Data
 {
@@ -57,7 +45,6 @@ namespace Student_Data
         private bool ValidEmail(string address)
         {
             // Sources: https://stackoverflow.com/a/17513022/11244896
-            //          https://stackoverflow.com/a/719543/11244896
             string regex = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
 
             if (Regex.IsMatch(address, regex))
@@ -70,49 +57,71 @@ namespace Student_Data
             return false;
         }
 
-        private bool Validate()
+        private bool ValidateText()
         {
-            bool textboxes = false;
-            bool age = false;
-            bool email = false;
             try
             {
                 if (string.IsNullOrWhiteSpace(txtForename.Text)
                     || string.IsNullOrWhiteSpace(txtSurname.Text)
                     || string.IsNullOrWhiteSpace(txtAddress1.Text)
                     || string.IsNullOrWhiteSpace(txtCity.Text)
-                    || string.IsNullOrWhiteSpace(txtPostcode.Text))
+                    || string.IsNullOrWhiteSpace(txtPostcode.Text)
+                    || string.IsNullOrWhiteSpace(cboCourse.Text)
+                    || (chkInterStudent.IsChecked == true && string.IsNullOrWhiteSpace(cboCountry.Text)))
                 {
-                    throw new System.FormatException("Field cannot be empty!");
-                    
-                } else
-                {
-                    textboxes = true;
+                    throw new FormatException("Fields marked \"*\" cannot be empty!");
+
                 }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (FormatException e)
+            {
+                MessageBox.Show(e.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+        }
+
+        private bool ValidateAge()
+        {
+            try
+            {
 
                 if (int.Parse(txtAge.Text) < 16
                     || int.Parse(txtAge.Text) > 101)
                 {
-                    throw new System.Exception("Numeric value cannot be outwith range! {16 <= n <= 101}");
-                } else
-                {
-                    age = true;
-                }
-
-                if (ValidEmail(txtEmail.Text))
-                {
-                    email = true;
+                    throw new FormatException("Numeric value cannot be outwith range! {16 <= n <= 101}");
                 }
                 else
                 {
-                    throw new System.Exception("Numeric value cannot be outwith range! {16 <= n <= 101}");
+                    return true;
+                }
+            }
+            catch (FormatException e)
+            {
+                MessageBox.Show(e.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+        }
+        private bool ValidateEmail()
+        {
+            try { 
+
+            if (ValidEmail(txtEmail.Text))
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("E-Mail address is invalid.");
                 }
             } catch (Exception e)
             {
-                MessageBox.Show("Please check the following:\n\nAll fields are not empty/whitespace\nAge is within range (16-101 inclusive)\nA valid email address is present", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(e.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
             }
-
-            return (email && textboxes && age);
         }
 
         // This event handler handles when the clear button is clicked.
@@ -130,29 +139,29 @@ namespace Student_Data
             txtEmail.Text = "";
             cboCountry.SelectedIndex = -1;
             chkInterStudent.IsChecked = false;
+
+            cboCountry.Visibility = Visibility.Hidden;
+            lblCountry.Visibility = Visibility.Hidden;
         }
 
         private void chkInterStudent_Checked(object sender, RoutedEventArgs e)
         {
-            if (chkInterStudent.IsChecked == true)
-            {
-                cboCountry.Visibility = Visibility.Visible;
-                lblCountry.Visibility = Visibility.Visible;
-            }
-
-            if (chkInterStudent.IsChecked == false)
-            {
-                cboCountry.Visibility = Visibility.Hidden;
-                lblCountry.Visibility = Visibility.Hidden;
-            }
+            cboCountry.Visibility = Visibility.Visible;
+            lblCountry.Visibility = Visibility.Visible;
         }
 
         private void btnValidate_Click(object sender, RoutedEventArgs e)
         {
-            if (Validate() == true)
+            if (ValidateAge() && ValidateEmail() && ValidateText())
             {
-                MessageBox.Show("All information entered is correct!\n\nPushing to database...", "Success!", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                MessageBox.Show("All information entered is correct!", "Success!", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
+        }
+
+        private void chkInterStudent_Unchecked(object sender, RoutedEventArgs e)
+        {
+            cboCountry.Visibility = Visibility.Hidden;
+            lblCountry.Visibility = Visibility.Hidden;
         }
     }
 }

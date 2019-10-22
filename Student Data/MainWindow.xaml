@@ -5,29 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Student_Data"
         mc:Ignorable="d"
-        Title="MainWindow" Height="346.667" Width="576">
+        Title="Insert Data" Height="346.667" Width="576">
     <Grid>
-        <Label x:Name="lblForename" Content="Forename(s):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,45,0,0"/>
+        <Label x:Name="lblForename" Content="*Forename(s):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,45,0,0"/>
         <TextBox x:Name="txtForename" HorizontalAlignment="Left" Height="23" Margin="93,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblSurname" Content="Surname:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,76,0,0"/>
+        <Label x:Name="lblSurname" Content="*Surname:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,76,0,0"/>
         <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="23" Margin="93,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="54,105,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblAge" Content="*Age:" HorizontalAlignment="Left" Margin="54,105,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="93,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="29"/>
-        <Label x:Name="lblCourse" Content="Course:" HorizontalAlignment="Left" Margin="39,131,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCourse" Content="*Course:" HorizontalAlignment="Left" Margin="39,131,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cboCourse" HorizontalAlignment="Left" Margin="93,135,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblAddress1" Content="Address Line 1:" HorizontalAlignment="Left" Margin="266,45,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblAddress1" Content="*Address Line 1:" HorizontalAlignment="Left" Margin="266,45,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtAddress1" HorizontalAlignment="Left" Height="23" Margin="361,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblAddress2" Content="Address Line 2:" HorizontalAlignment="Left" Margin="266,72,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtAddress2" HorizontalAlignment="Left" Height="23" Margin="361,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblCity" Content="City:" HorizontalAlignment="Left" Margin="323,99,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCity" Content="*City:" HorizontalAlignment="Left" Margin="323,99,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtCity" HorizontalAlignment="Left" Height="23" Margin="361,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblPostcode" Content="Postcode:" HorizontalAlignment="Left" Margin="295,125,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPostcode" Content="*Postcode:" HorizontalAlignment="Left" Margin="295,125,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtPostcode" HorizontalAlignment="Left" Height="23" Margin="361,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
-        <Label x:Name="lblEmail" Content="Email:" HorizontalAlignment="Left" Margin="315,151,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblEmail" Content="*Email:" HorizontalAlignment="Left" Margin="315,151,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="361,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
         <CheckBox x:Name="chkInterStudent" Content="International Student" HorizontalAlignment="Left" Margin="361,208,0,0" VerticalAlignment="Top" Checked="chkInterStudent_Checked"/>
         <ComboBox x:Name="cboCountry" HorizontalAlignment="Left" Margin="361,181,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblCountry" Content="Country:" HorizontalAlignment="Left" Margin="301,177,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCountry" Content="*Country:" HorizontalAlignment="Left" Margin="301,177,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnValidate" Content="Validate" HorizontalAlignment="Left" Margin="32,225,0,0" VerticalAlignment="Top" Width="78" Height="70" Click="btnValidate_Click"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="183,225,0,0" VerticalAlignment="Top" Width="78" Height="70" Click="btnClear_Click"/>
 

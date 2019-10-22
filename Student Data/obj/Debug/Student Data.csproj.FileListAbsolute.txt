@@ -12,3 +12,18 @@ C:\Users\Stewart\Desktop\C#\Student Data\Student Data\obj\Debug\Student_Data.Pro
 C:\Users\Stewart\Desktop\C#\Student Data\Student Data\obj\Debug\Student Data.csproj.GenerateResource.cache
 C:\Users\Stewart\Desktop\C#\Student Data\Student Data\obj\Debug\Student Data.exe
 C:\Users\Stewart\Desktop\C#\Student Data\Student Data\obj\Debug\Student Data.pdb
+H:\VCS\student-data-master\Student Data\bin\Debug\Student Data.exe.config
+H:\VCS\student-data-master\Student Data\bin\Debug\Student Data.exe
+H:\VCS\student-data-master\Student Data\bin\Debug\Student Data.pdb
+H:\VCS\student-data-master\Student Data\obj\Debug\Student Data.csprojAssemblyReference.cache
+H:\VCS\student-data-master\Student Data\obj\Debug\MainWindow.g.cs
+H:\VCS\student-data-master\Student Data\obj\Debug\App.g.cs
+H:\VCS\student-data-master\Student Data\obj\Debug\Student Data_MarkupCompile.cache
+H:\VCS\student-data-master\Student Data\obj\Debug\Student Data_MarkupCompile.lref
+H:\VCS\student-data-master\Student Data\obj\Debug\MainWindow.baml
+H:\VCS\student-data-master\Student Data\obj\Debug\Student Data.g.resources
+H:\VCS\student-data-master\Student Data\obj\Debug\Student_Data.Properties.Resources.resources
+H:\VCS\student-data-master\Student Data\obj\Debug\Student Data.csproj.GenerateResource.cache
+H:\VCS\student-data-master\Student Data\obj\Debug\Student Data.csproj.CoreCompileInputs.cache
+H:\VCS\student-data-master\Student Data\obj\Debug\Student Data.exe
+H:\VCS\student-data-master\Student Data\obj\Debug\Student Data.pdb

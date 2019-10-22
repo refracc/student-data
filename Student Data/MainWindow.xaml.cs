@@ -42,6 +42,7 @@ namespace Student_Data
             }
         }
 
+        // This function validates the e-mail using RegEx
         private bool ValidEmail(string address)
         {
             // Sources: https://stackoverflow.com/a/17513022/11244896
@@ -49,6 +50,7 @@ namespace Student_Data
 
             if (Regex.IsMatch(address, regex))
             {
+                // Checks if any characters are left over aftr being replaced. 
                 if (Regex.Replace(address, regex, string.Empty).Length == 0)
                 {
                     return true;
@@ -57,6 +59,7 @@ namespace Student_Data
             return false;
         }
 
+        // This method valudates all the text boxes and combo boxes.
         private bool ValidateText()
         {
             try
@@ -69,7 +72,7 @@ namespace Student_Data
                     || string.IsNullOrWhiteSpace(cboCourse.Text)
                     || (chkInterStudent.IsChecked == true && string.IsNullOrWhiteSpace(cboCountry.Text)))
                 {
-                    throw new FormatException("Fields marked \"*\" cannot be empty!");
+                    throw new Exception("Fields marked \"*\" cannot be empty!");
 
                 }
                 else
@@ -77,13 +80,14 @@ namespace Student_Data
                     return true;
                 }
             }
-            catch (FormatException e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
         }
 
+        // This method validates the age.
         private bool ValidateAge()
         {
             try
@@ -92,19 +96,21 @@ namespace Student_Data
                 if (int.Parse(txtAge.Text) < 16
                     || int.Parse(txtAge.Text) > 101)
                 {
-                    throw new FormatException("Numeric value cannot be outwith range! {16 <= n <= 101}");
+                    throw new Exception("Age cannot be outwith range! {16 < n < 101}");
                 }
                 else
                 {
                     return true;
                 }
             }
-            catch (FormatException e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
         }
+
+        // This method utlises the ValidEmail method created earlier to validate the e-mail address.
         private bool ValidateEmail()
         {
             try { 

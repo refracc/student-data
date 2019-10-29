@@ -109,27 +109,7 @@ namespace Student_Data
                 return false;
             }
         }
-
-        // This method utlises the ValidEmail method created earlier to validate the e-mail address.
-        private bool ValidateEmail()
-        {
-            try { 
-
-            if (ValidEmail(txtEmail.Text))
-                {
-                    return true;
-                }
-                else
-                {
-                    throw new Exception("E-Mail address is invalid.");
-                }
-            } catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
-            }
-        }
-
+        
         // This event handler handles when the clear button is clicked.
         // It removes all the content from the screen.
         private void btnClear_Click(object sender, RoutedEventArgs e)

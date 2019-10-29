@@ -43,7 +43,7 @@ namespace Student_Data
         }
 
         // This function validates the e-mail using RegEx
-        private bool ValidEmail(string address)
+        private bool ValidateEmail(string address)
         {
             // Sources: https://stackoverflow.com/a/17513022/11244896
             string regex = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
